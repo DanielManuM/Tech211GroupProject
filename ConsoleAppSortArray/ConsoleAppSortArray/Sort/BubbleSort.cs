@@ -2,7 +2,7 @@
 
 using System;
 
-public class BubbleSort
+public class BubbleSortClass
 {
     public static int[] BubbleSort(int[] inputArray)
     {
