@@ -5,7 +5,9 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppSortArray", "ConsoleAppSortArray\ConsoleAppSortArray.csproj", "{C6C25C51-ECCA-4FBB-98FB-B753D477C2DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{77C44C89-62AC-4867-B7F4-1894CC4F53B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{77C44C89-62AC-4867-B7F4-1894CC4F53B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputCollectorTest", "RunAppTest\InputCollectorTest.csproj", "{1ADC34FC-5A6B-40A7-B4C1-376C65DA529C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{77C44C89-62AC-4867-B7F4-1894CC4F53B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77C44C89-62AC-4867-B7F4-1894CC4F53B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77C44C89-62AC-4867-B7F4-1894CC4F53B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ADC34FC-5A6B-40A7-B4C1-376C65DA529C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ADC34FC-5A6B-40A7-B4C1-376C65DA529C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ADC34FC-5A6B-40A7-B4C1-376C65DA529C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ADC34FC-5A6B-40A7-B4C1-376C65DA529C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
