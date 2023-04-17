@@ -119,5 +119,15 @@ namespace Tests
                 Assert.That(output, Is.EqualTo(testArray));
             }
         }
+
+        [TestFixture]
+        public class SorterFactoryTests
+        {
+            [Test]
+            public void GivenBubbleSortType_RunSort_ReturnsBubbleSortClass()
+            {
+                Assert.That(Sorter.GetSortClass("merge"), Is.InstanceOf<MergeSort>());
+            }
+        }
     }
 }
