@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using ConsoleAppSortArray;
 
 namespace Tests
@@ -35,56 +34,45 @@ namespace Tests
         }
 
         [TestFixture]
-        public class MergeSort
+        public class MergeSortTests
         {
-            [Test]
-            public void GivenEmptyArrays_ReturnEmptyArray()
+            private MergeSort mergeSort;
+            private int[] _sut = { 299, -8, int.MinValue, 34, -23, int.MaxValue, 2, 3, 13, 23, 50, 99, 12, -34, 2 };
+
+            [SetUp]
+            public void SetUp()
             {
-                var testArray1 = new int[] { };
-                var testArray2 = new int[] { };
-                var output = MergeSortClass.MergeSort(testArray1, testArray2);
-                Assert.That(output, Is.EqualTo(new int[] { }));
+                mergeSort = new MergeSort();
             }
 
             [Test]
-            public void GivenTwoArrays_IfOneIsEmpty_ReturnsArrayWithLengthOfOther()
+            public void GivenEmptyArray_MergeSort_ReturnsEmptyArray()
             {
-                var testArray1 = new int[] { 1, 2, 3 };
-                var testArray2 = new int[] { };
-                var output = MergeSortClass.MergeSort(testArray1, testArray2).Length;
-                Assert.That(output, Is.EqualTo(3));
+                Assert.That(mergeSort.Sort(new int[0]), Is.EquivalentTo(new int[] {}));
             }
 
             [Test]
-            public void GivenTwoArrays_ReturnArrayWithCombinedLengthOfTwoInputs()
+            public void GivenNullAsAnInput_MergeSort_ThrowsException()
             {
-                var testArray1 = new int[] { 1, 2, 3 };
-                var testArray2 = new int[] { 1 };
-                var output = MergeSortClass.MergeSort(testArray1, testArray2).Length;
-                Assert.That(output, Is.EqualTo(4));
+                Assert.That(() => mergeSort.Sort(null), Throws.InstanceOf<ArgumentNullException>()
+                    .With.Message.Contain("Input cannot be null. (Parameter 'unsortedArray')"));
             }
 
             [Test]
-            public void GivenTwoArrays_ReturnMergedArraySortedInAscendingOrder()
+            public void GivenUnsortedArrayOfIntegers_MergeSort_ReturnsSortedArray()
             {
-                var testArray1 = new int[] { -2, -1, 4 };
-                var testArray2 = new int[] { -1, 4, 10 };
-                var output = MergeSortClass.MergeSort(testArray1, testArray2);
-                Assert.That(output, Is.EqualTo(new int[] { -2, -1, -1, 4, 4, 10 }));
+                int[] expected = { int.MinValue, -34, -23, -8, 2, 2, 3, 12, 13, 23, 34, 50, 99, 299, int.MaxValue };
+                Assert.That(mergeSort.Sort(_sut), Is.EquivalentTo(expected));
             }
+
             [Test]
-            public void GivenTwoArraysOfDifferentLength_ReturnMergedArraySorted()
+            public void GivenTwoLists_Merge_MergesListsTogether()
             {
-                var testArray1 = new int[] { -2, 5 };
-                var testArray2 = new int[] { -1, 4, 4, 10, 50 };
-                var output = MergeSortClass.MergeSort(testArray1, testArray2);
-                Assert.That(output, Is.EqualTo(new int[] { -2, -1, 4, 4, 5, 10, 50 }));
-            }
-            [Test]
-            public void GivenANullArray_ThrowsException()
-            {
-                var testArray1 = new int[] { 1, 2, 3 };
-                Assert.That(() => MergeSortClass.MergeSort(testArray1, null), Throws.TypeOf<ArgumentException>());
+                List<int> expected = new List<int>() { -2, 1, 2, 2, 5, 5, 9, 10 };
+                List<int> left = new List<int>() { 1, 2, 5, 9 };
+                List<int> right = new List<int>() { -2, 2, 5, 10 };
+
+                Assert.That(mergeSort.Merge(left, right), Is.EqualTo(expected));
             }
         }
 

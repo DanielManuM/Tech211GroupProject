@@ -1,43 +1,59 @@
 ﻿namespace ConsoleAppSortArray;
 
-using System;
-
-public class MergeSortClass
+public class MergeSort : SortType
 {
-    public static int[] MergeSort(int[] input1, int[] input2)
+    public override string SortName => "merge";
+    public override int[] Sort(int[] unsortedArray) =>
+        unsortedArray is null ? throw new ArgumentNullException(nameof(unsortedArray), "Input cannot be null.")
+        : SplitArray(unsortedArray).ToArray();
+
+    public List<int> SplitArray(int[] arr)
     {
-        if (input1 is null || input2 is null) throw new ArgumentException("Null");
-        if (input1.Length == 0) return input2;
-        if (input2.Length == 0) return input1;
-        int[] result = new int[input1.Length + input2.Length];
-        int pointer = 0;
-        int index1 = 0;
-        int index2 = 0;
-        while (index1 < input1.Length && index2 < input2.Length)
+        List<int> numList = arr.ToList();
+        if (numList.Count <= 1) return numList;
+
+        var left = new List<int>();
+        var right = new List<int>();
+
+        for (int i = 0; i < numList.Count; i++)
         {
-            if (input1[index1] < input2[index2])
+            if (i < numList.Count / 2) left.Add(numList[i]);
+            else right.Add(numList[i]);
+        }
+
+        left = SplitArray(left.ToArray());
+        right = SplitArray(right.ToArray());
+
+        return Merge(left, right);
+    }
+
+    public List<int> Merge(List<int> left, List<int> right)
+    {
+        var result = new List<int>();
+
+        while (left.Count != 0 && right.Count != 0)
+        {
+            if (left[0] <= right[0])
             {
-                result[pointer] = input1[index1];
-                index1++;
+                result.Add(left[0]);
+                left.RemoveAt(0);
             }
             else
             {
-                result[pointer] = input2[index2];
-                index2++;
+                result.Add(right[0]);
+                right.RemoveAt(0);
             }
-            pointer++;
         }
-        while (index1 < input1.Length)
+
+        while (left.Count != 0)
         {
-            result[pointer] = input1[index1];
-            index1++;
-            pointer++;
+            result.Add(left[0]);
+            left.RemoveAt(0);
         }
-        while (index2 < input2.Length)
+        while (right.Count != 0)
         {
-            result[pointer] = input2[index2];
-            index2++;
-            pointer++;
+            result.Add(right[0]);
+            right.RemoveAt(0);
         }
 
         return result;
