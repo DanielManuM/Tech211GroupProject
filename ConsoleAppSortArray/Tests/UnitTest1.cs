@@ -121,6 +121,22 @@ namespace Tests
         }
 
         [TestFixture]
+        public class SorterFactoryTests
+        {
+            [Test]
+            public void GivenBubbleSortType_RunSort_ReturnsBubbleSortClass()
+            {
+                Assert.Multiple(() =>
+                {
+                    Assert.That(Sorter.GetSortClass("merge"), Is.InstanceOf<MergeSort>());
+                    Assert.That(Sorter.GetSortClass("bubble"), Is.InstanceOf<BubbleSortClass>());
+                    Assert.That(Sorter.GetSortClass("dotnet"), Is.InstanceOf<DotNetSortClass>());
+                    Assert.That(Sorter.GetSortClass("invalid"), Is.Null);
+                });
+            }
+        }
+
+        [TestFixture]
         public class TimerTests
         {
             [Test]
