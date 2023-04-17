@@ -2,9 +2,7 @@
 
 using System;
 
-public class Class1
+public class DotNetSort
 {
-	public Class1()
-	{
-	}
+
 }

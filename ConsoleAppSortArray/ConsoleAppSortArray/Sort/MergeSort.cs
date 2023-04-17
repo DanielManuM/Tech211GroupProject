@@ -2,9 +2,7 @@
 
 using System;
 
-public class Class1
+public class MergeSort
 {
-	public Class1()
-	{
-	}
+
 }
