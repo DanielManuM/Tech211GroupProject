@@ -2,9 +2,11 @@
 
 using System;
 
-public class BubbleSortClass
+public class BubbleSortClass : SortType
 {
-    public static int[] BubbleSort(int[] inputArray)
+    public override string SortName => "BubbleSort";
+
+    public override int[] Sort(int[] inputArray)
     {
         int n = inputArray.Length;
         bool swapped = false;
