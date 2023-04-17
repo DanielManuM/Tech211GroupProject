@@ -11,19 +11,16 @@ namespace Tests
             [Test]
             public void GivenAnEmptyArrayReturnsEmptyArray()
             {
-                var bubbleSortClass = new BubbleSortClass();
                 var testArray = new int[] { };
-                var output = bubbleSortClass.Sort(testArray);
+                var output = new BubbleSortClass().Sort(testArray);
                 Assert.That(output, Is.EqualTo(testArray));
             }
 
             [Test]
-
             public void GivenAnArrayWithNElements_ReturnsArrayWithSameLength()
             {
-                var bubbleSortClass = new BubbleSortClass();
                 var testArray = new int[] { 1, 2, 3 };
-                var output = bubbleSortClass.Sort(testArray).Length;
+                var output = new BubbleSortClass().Sort(testArray).Length;
                 Assert.That(output, Is.EqualTo(3));
             }
 
@@ -31,9 +28,8 @@ namespace Tests
 
             public void GivenAnArrayWithNElements_ReturnsArrayWithSameArraySortedLowToHigh()
             {
-                var bubbleSortClass = new BubbleSortClass();
                 var testArray = new int[] { 5, 1, -3, 3, 6 };
-                var output = bubbleSortClass.Sort(testArray);
+                var output = new BubbleSortClass().Sort(testArray);
                 Assert.That(output, Is.EqualTo(new int[] { -3, 1, 3, 5, 6 }));
             }
         }
@@ -89,6 +85,50 @@ namespace Tests
             {
                 var testArray1 = new int[] { 1, 2, 3 };
                 Assert.That(() => MergeSortClass.MergeSort(testArray1, null), Throws.TypeOf<ArgumentException>());
+            }
+        }
+
+        [TestFixture]
+        public class DotNetSort
+        {
+            [Test]
+            public void GivenAnEmptyArrayReturnsEmptyArray()
+            {
+                var testArray = new int[] { };
+                var output = new DotNetSortClass().Sort(testArray);
+                Assert.That(output, Is.EqualTo(testArray));
+            }
+
+            [Test]
+            public void GivenAnArrayWithNElements_ReturnsArrayWithSameLength()
+            {
+                var testArray = new int[] { 1, 2, 3 };
+                var output = new DotNetSortClass().Sort(testArray).Length;
+                Assert.That(output, Is.EqualTo(3));
+            }
+
+            [Test]
+            public void GivenAnArrayWithNElements_ReturnsArrayWithSameArraySortedLowToHigh()
+            {
+                var testArray = new int[] { 5, 1, -3, 3, 6 };
+                var output = new DotNetSortClass().Sort(testArray);
+                Assert.That(output, Is.EqualTo(new int[] { -3, 1, 3, 5, 6 }));
+            }
+
+            [Test]
+            public void GivenAnArrayWithDuplicates_ReturnsArrayWithDuplicatesSortedLowToHigh()
+            {
+                var testArray = new int[] { 5, 1, -3, 3, 6, 5 };
+                var output = new DotNetSortClass().Sort(testArray);
+                Assert.That(output, Is.EqualTo(new int[] { -3, 1, 3, 5, 5, 6 }));
+            }
+
+            [Test]
+            public void GivenAnArrayAlreadySorted_ReturnsArrayInSameOrder()
+            {
+                var testArray = new int[] { -3, 1, 3, 5, 6 };
+                var output = new DotNetSortClass().Sort(testArray);
+                Assert.That(output, Is.EqualTo(testArray));
             }
         }
     }
