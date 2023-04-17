@@ -11,8 +11,9 @@ namespace Tests
             [Test]
             public void GivenAnEmptyArrayReturnsEmptyArray()
             {
+                var bubbleSortClass = new BubbleSortClass();
                 var testArray = new int[] { };
-                var output = BubbleSortClass.Sort(testArray);
+                var output = bubbleSortClass.Sort(testArray);
                 Assert.That(output, Is.EqualTo(testArray));
             }
 
@@ -20,8 +21,9 @@ namespace Tests
 
             public void GivenAnArrayWithNElements_ReturnsArrayWithSameLength()
             {
+                var bubbleSortClass = new BubbleSortClass();
                 var testArray = new int[] { 1, 2, 3 };
-                var output = BubbleSortClass.Sort(testArray).Length;
+                var output = bubbleSortClass.Sort(testArray).Length;
                 Assert.That(output, Is.EqualTo(3));
             }
 
@@ -29,8 +31,9 @@ namespace Tests
 
             public void GivenAnArrayWithNElements_ReturnsArrayWithSameArraySortedLowToHigh()
             {
+                var bubbleSortClass = new BubbleSortClass();
                 var testArray = new int[] { 5, 1, -3, 3, 6 };
-                var output = BubbleSortClass.Sort(testArray);
+                var output = bubbleSortClass.Sort(testArray);
                 Assert.That(output, Is.EqualTo(new int[] { -3, 1, 3, 5, 6 }));
             }
         }
