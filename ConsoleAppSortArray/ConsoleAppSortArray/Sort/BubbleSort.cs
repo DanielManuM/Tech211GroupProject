@@ -9,7 +9,7 @@ public class BubbleSortClass : SortType
     public override int[] Sort(int[] inputArray)
     {
         int n = inputArray.Length;
-        bool swapped = false;
+        bool swapped;
         do
         {
             swapped = false;
