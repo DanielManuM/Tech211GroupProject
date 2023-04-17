@@ -2,9 +2,8 @@
 
 using System;
 
-public class MergeSort
+public class MergeSortClass
 {
-<<<<<<< HEAD
     public static int[] MergeSort(int[] input1, int[] input2)
     {
         if (input1 is null || input2 is null) throw new ArgumentException("Null");
@@ -43,7 +42,4 @@ public class MergeSort
 
         return result;
     }
-=======
-
->>>>>>> 6ede34cea8b8d4e1eae498a1bcd34d9729216b5e
 }
