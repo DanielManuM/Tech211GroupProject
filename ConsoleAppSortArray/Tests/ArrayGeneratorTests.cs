@@ -2,12 +2,11 @@
 
 namespace Tests;
 
-public class ArrayTest
+public class ArrayGeneratorTests
 {
     [Test]
     public void GivenNumberReturnArrayOfThatLength()
     {
         Assert.That(ArrayGenerator.RandomArrayGenerator(10), Has.Length.EqualTo(10)); 
     }
-
 }
