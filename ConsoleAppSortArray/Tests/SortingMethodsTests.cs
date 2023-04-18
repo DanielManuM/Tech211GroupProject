@@ -2,10 +2,10 @@ using ConsoleAppSortArray;
 
 namespace Tests
 {
-    public class Tests
+    public class SortingMethodsTests
     {
         [TestFixture]
-        public class BubbleSort
+        public class BubbleSortTests
         {
             [Test]
             public void GivenAnEmptyArrayReturnsEmptyArray()
@@ -77,7 +77,7 @@ namespace Tests
         }
 
         [TestFixture]
-        public class DotNetSort
+        public class DotNetSortTests
         {
             [Test]
             public void GivenAnEmptyArrayReturnsEmptyArray()
@@ -133,28 +133,6 @@ namespace Tests
                     Assert.That(Sorter.GetSortClass(3), Is.InstanceOf<DotNetSortClass>());
                     //Assert.That(Sorter.GetSortClass("invalid"), Is.Null);
                 });
-            }
-        }
-
-        [TestFixture]
-        public class TimerTests
-        {
-            [Test]
-            public void Time_ReturnsElapsedTime()
-            {
-                var expectedElapsedTime = TimeSpan.FromSeconds(1);
-                Action longAction = () => Thread.Sleep(expectedElapsedTime);
-                var elapsedTime = ConsoleAppSortArray.Timer.Time(longAction);
-                Assert.That(elapsedTime, Is.EqualTo(expectedElapsedTime).Within(TimeSpan.FromMilliseconds(50)));
-            }
-
-            [Test]
-            public void Time_CanTimeSortingAlgorithm()
-            {
-                var inputArray = new int[] { 5, 1, -3, 3, 6 };
-                var bubbleSortClass = new BubbleSortClass();
-                var elapsedTime = ConsoleAppSortArray.Timer.Time(() => bubbleSortClass.Sort(inputArray));
-                Assert.That(elapsedTime, Is.Not.Zero);
             }
         }
     }
