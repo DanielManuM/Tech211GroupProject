@@ -13,12 +13,14 @@ public class InsertionSort : SortType
         int i = 1;
         while (i < arr.Length)
         {
-            int j = i;
-            while (j > 0 && arr[j - 1] > arr[j])
+            int k = arr[i];
+            int j = i - 1;
+            while (j >= 0 && arr[j] > k)
             {
-                (arr[j - 1], arr[i]) = (arr[i], arr[j - 1]);
-                i = j - 1;
+                arr[j + 1] = arr[j];
+                j--;
             }
+            arr[j + 1] = k;
             i++;
         }
 
