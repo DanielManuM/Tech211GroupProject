@@ -24,7 +24,6 @@ public class Controller
         var elapsedTime = stopwatch.Elapsed.ToString();
 
         View.Output(fixedRandArray, sortedArray, elapsedTime);
-
     }
 
 }
