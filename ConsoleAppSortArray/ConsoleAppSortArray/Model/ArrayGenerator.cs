@@ -2,9 +2,9 @@
 
 using System;
 
-public class ArrayGenerator
+public static class ArrayGenerator
 {
-    public int[] RandomArrayGenerator(int arrayLength)
+    public static int[] RandomArrayGenerator(int arrayLength)
     {
         var randArray = new int[arrayLength];
         var rnd = new Random();

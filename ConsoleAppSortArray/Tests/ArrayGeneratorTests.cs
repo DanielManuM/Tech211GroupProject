@@ -7,8 +7,7 @@ public class ArrayTest
     [Test]
     public void GivenNumberReturnArrayOfThatLength()
     {
-        var arrayGen = new ArrayGenerator();
-        Assert.That(arrayGen.RandomArrayGenerator(10), Has.Length.EqualTo(10)); 
+        Assert.That(ArrayGenerator.RandomArrayGenerator(10), Has.Length.EqualTo(10)); 
     }
 
 }
