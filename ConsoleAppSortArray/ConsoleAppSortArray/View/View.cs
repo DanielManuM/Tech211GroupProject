@@ -5,14 +5,17 @@ public static class View
     public static void InputTextDisplayArray()
     {
         Console.WriteLine("Welcome to the random array sorter!!");
-        Console.Write("Please Choose the length of the array: ");
+        Console.WriteLine();
+        Console.Write("Please choose the length of the array: ");
     }
 
     public static void InputTextDisplaySort()
     {
-        Console.WriteLine("Press 1 for BubbleSort");
-        Console.WriteLine("Press 2 for MergeSort");
-        Console.WriteLine("Press 3 for DotNetSort");
+        Console.WriteLine();
+        Console.WriteLine("Press 1 for Bubble Sort");
+        Console.WriteLine("Press 2 for Merge Sort");
+        Console.WriteLine("Press 3 for .NET Sort");
+        Console.WriteLine();
         Console.Write("Choice: ");
     }
 
