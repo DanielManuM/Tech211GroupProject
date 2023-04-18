@@ -18,7 +18,7 @@ public static class InputCollector
     public static int InputSortType()
     {
         bool isNumber = Int32.TryParse(Console.ReadLine(), out int value);
-        while (!isNumber || value > 3 || value < 1 )
+        while (!isNumber || value > 4 || value < 1 )
         {
             Console.WriteLine("Please input numbers between 1 and 3!!");
             isNumber = Int32.TryParse(Console.ReadLine(), out value);

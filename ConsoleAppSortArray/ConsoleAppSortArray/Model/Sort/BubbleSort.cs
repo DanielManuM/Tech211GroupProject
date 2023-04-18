@@ -1,11 +1,7 @@
 ﻿namespace ConsoleAppSortArray;
 
-using System;
-
 public class BubbleSortClass : SortType
 {
-    public override string SortName => "BubbleSort";
-
     public override int[] Sort(int[] inputArray)
     {
         int n = inputArray.Length;
