@@ -1,10 +1,15 @@
 # Tech211SortProject
 
+# Setup 
+- Git clone project to local machine
+- Open [ConsoleApp](./ConsoleAppSortArray/ConsoleAppSortArray.sln)
+
+# Use
+- Run program within IDE
+- Follow on screen prompts to use program
 
 
-
-
-## Current Progress
+# Components
 
 - Produced Models
   - Sorts:
