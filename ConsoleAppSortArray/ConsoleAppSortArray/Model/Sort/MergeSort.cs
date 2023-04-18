@@ -2,6 +2,7 @@
 
 public class MergeSort : SortType
 {
+    public override string MethodName => "merge sort";
     public override int[] Sort(int[] unsortedArray) =>
         unsortedArray is null ? throw new ArgumentNullException(nameof(unsortedArray), "Input cannot be null.")
         : SplitArray(unsortedArray).ToArray();

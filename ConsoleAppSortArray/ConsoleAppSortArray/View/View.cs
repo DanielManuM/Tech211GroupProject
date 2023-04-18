@@ -29,12 +29,12 @@ public static class View
         Console.Write("Choice: ");
     }
 
-    public static void Output(int[] unsortedArray, int[] sortedArray, string elapsedTime)
+    public static void Output(SortType sortType, int[] unsortedArray, int[] sortedArray, string elapsedTime)
     {
         Console.WriteLine();
         Console.WriteLine("Unsorted Array: " + string.Join(", ", unsortedArray));
         Console.WriteLine();
-        Console.WriteLine("Sorted Array: " + string.Join(", ", sortedArray));
+        Console.WriteLine($"Sorted Array (sorted using {sortType.MethodName}): {string.Join(", ", sortedArray)}");
 
         string seconds = elapsedTime.Substring(7);
 
