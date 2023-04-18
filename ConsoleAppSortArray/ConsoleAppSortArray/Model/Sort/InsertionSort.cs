@@ -2,6 +2,7 @@
 
 public class InsertionSort : SortType
 {
+    public override string MethodName => "insertion sort";
     public override int[] Sort(int[] arr)
     {
         if (arr is null)

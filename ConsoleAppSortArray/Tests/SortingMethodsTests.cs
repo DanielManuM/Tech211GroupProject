@@ -163,7 +163,8 @@ namespace Tests
                 {
                     Assert.That(Sorter.GetSortClass(2), Is.InstanceOf<MergeSort>());
                     Assert.That(Sorter.GetSortClass(1), Is.InstanceOf<BubbleSortClass>());
-                    Assert.That(Sorter.GetSortClass(3), Is.InstanceOf<DotNetSortClass>());
+                    Assert.That(Sorter.GetSortClass(3), Is.InstanceOf<InsertionSort>());
+                    Assert.That(Sorter.GetSortClass(4), Is.InstanceOf<DotNetSortClass>());
                     Assert.That(Sorter.GetSortClass(5), Is.Null);
                 });
             }

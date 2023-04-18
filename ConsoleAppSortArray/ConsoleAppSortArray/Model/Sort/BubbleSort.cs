@@ -2,6 +2,7 @@
 
 public class BubbleSortClass : SortType
 {
+    public override string MethodName => "bubble sort";
     public override int[] Sort(int[] inputArray)
     {
         int n = inputArray.Length;

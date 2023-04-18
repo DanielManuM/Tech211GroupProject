@@ -32,7 +32,7 @@ public class Controller
             string elapsedTime = GetTime(sortObject, randArray, out sortedArray);
 
             // Display all outputs to the user
-            View.Output(originalRandArray, sortedArray, elapsedTime);
+            View.Output(sortObject, originalRandArray, sortedArray, elapsedTime);
 
             // Prompt user to restart app or to exit
             run = InputCollector.InputDecision();
