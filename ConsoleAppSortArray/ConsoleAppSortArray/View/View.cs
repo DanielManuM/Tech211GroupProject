@@ -23,8 +23,7 @@ public static class View
         Console.WriteLine();
         Console.WriteLine("Press 1 for Bubble Sort");
         Console.WriteLine("Press 2 for Merge Sort");
-        Console.WriteLine("Press 3 for Insertion Sort");
-        Console.WriteLine("Press 4 for .NET Sort");
+        Console.WriteLine("Press 3 for .NET Sort");
         Console.WriteLine();
         Console.Write("Choice: ");
     }
