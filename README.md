@@ -1,6 +1,10 @@
 # Tech211SortProject
 
-## Day 1 Progress
+
+
+
+
+## Current Progress
 
 - Produced Models
   - Sorts:
@@ -14,4 +18,7 @@
 
 - Tests
   - [x] Sorts
-  - [] Random Array Generator
+  - [x] Random Array Generator
+  - [ ] Input Collector
+  - [x] Sorter (Factory Class)
+

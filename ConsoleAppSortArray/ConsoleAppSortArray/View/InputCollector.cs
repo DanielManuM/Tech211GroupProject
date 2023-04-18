@@ -7,9 +7,9 @@ public static class InputCollector
     public static int InputArrayLength()
     {
         bool isNumber = Int32.TryParse(Console.ReadLine(), out int value);
-        while (!isNumber)
+        while (!isNumber || value < 0)
         {
-            Console.WriteLine("Please input numbers!!");
+            Console.WriteLine("Please input length more than 0!!");
             isNumber = Int32.TryParse(Console.ReadLine(), out value);           
         }
         return value;
