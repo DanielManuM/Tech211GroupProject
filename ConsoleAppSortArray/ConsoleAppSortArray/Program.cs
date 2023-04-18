@@ -1,11 +1,11 @@
-﻿namespace ConsoleAppSortArray;
-
-public class MainClass
+﻿namespace ConsoleAppSortArray
 {
-    static void Main()
+    public class MainClass
     {
-        Controller.RunApp();
-
-        Console.ReadKey();
+        static void Main()
+        {
+            Controller.RunApp();
+            Console.ReadKey();
+        }
     }
 }

@@ -2,9 +2,18 @@
 
 public static class View
 {
-    public static void InputTextDisplayArray()
+    public static void DisplayGreeting()
     {
         Console.WriteLine("Welcome to the random array sorter!!");
+    }
+
+    public static void DisplayExitMessage()
+    {
+        Console.WriteLine("Goodbye.");
+    }
+
+    public static void InputTextDisplayArray()
+    {
         Console.WriteLine();
         Console.Write("Please choose the length of the array: ");
     }
@@ -14,7 +23,8 @@ public static class View
         Console.WriteLine();
         Console.WriteLine("Press 1 for Bubble Sort");
         Console.WriteLine("Press 2 for Merge Sort");
-        Console.WriteLine("Press 3 for .NET Sort");
+        Console.WriteLine("Press 3 for Insertion Sort");
+        Console.WriteLine("Press 4 for .NET Sort");
         Console.WriteLine();
         Console.Write("Choice: ");
     }
