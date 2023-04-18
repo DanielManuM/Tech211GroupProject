@@ -4,6 +4,11 @@ public class InsertionSort : SortType
 {
     public override int[] Sort(int[] arr)
     {
+        if (arr is null)
+        {
+            throw new ArgumentNullException(nameof(arr), "Input cannot be null.");
+        };
+
         int i = 1;
         while (i < arr.Length)
         {

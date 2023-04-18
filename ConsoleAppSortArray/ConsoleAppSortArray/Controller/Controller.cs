@@ -6,24 +6,47 @@ public class Controller
 {
     public static void RunApp()
     {
-        View.InputTextDisplayArray();
-        var arrayLength = InputCollector.InputArrayLength();
-        View.InputTextDisplaySort();
-        int sortType = InputCollector.InputSortType();
+        // Initial greeting
+        View.DisplayGreeting();
 
-        var sortObject = Sorter.GetSortClass(sortType);
-        var randArray = ArrayGenerator.RandomArrayGenerator(arrayLength);
+        string run = "y";
+        while (run == "y")
+        {
+            // Collect user input: array length and sort method
+            View.InputTextDisplayArray();
+            int arrayLength = InputCollector.InputArrayLength();
+            View.InputTextDisplaySort();
+            int sortType = InputCollector.InputSortType();
 
-        var fixedRandArray = new int[arrayLength];
-        randArray.CopyTo(fixedRandArray, 0);
+            // Generate specific sort object
+            SortType? sortObject = Sorter.GetSortClass(sortType);
 
-        var stopwatch = Stopwatch.StartNew();
-        var sortedArray = sortObject.Sort(randArray);
-        stopwatch.Stop();
+            //Generate random array
+            int[] randArray = ArrayGenerator.RandomArrayGenerator(arrayLength);
 
-        var elapsedTime = stopwatch.Elapsed.ToString();
+            // Retain a copy of the original unsorted array
+            int[] originalRandArray = (int[])randArray.Clone();
 
-        View.Output(fixedRandArray, sortedArray, elapsedTime);
+            // Get elapsed time
+            int[] sortedArray;
+            string elapsedTime = GetTime(sortObject, randArray, out sortedArray);
+
+            // Display all outputs to the user
+            View.Output(originalRandArray, sortedArray, elapsedTime);
+
+            // Prompt user to restart app or to exit
+            run = InputCollector.InputDecision();
+        }
+
+        // Display goodbye message
+        View.DisplayExitMessage();
     }
 
+    public static string GetTime(SortType sortObject, int[] randArray, out int[] sortedArray)
+    {
+        Stopwatch stopwatch = Stopwatch.StartNew();
+        sortedArray = sortObject.Sort(randArray);
+        stopwatch.Stop();
+        return stopwatch.Elapsed.ToString();
+    }
 }

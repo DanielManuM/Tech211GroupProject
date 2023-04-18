@@ -26,4 +26,19 @@ public static class InputCollector
         return value;
     }
 
+    public static string InputDecision()
+    {
+        Console.WriteLine();
+        Console.WriteLine("Would you like to re-run the program? y / n");
+        string input = Console.ReadLine().ToLower();
+
+        while (input != "y" && input != "n")
+        {
+            Console.WriteLine("Invalid selection. Please input 'y' or 'n'.");
+            input = Console.ReadLine().ToLower();
+        }
+
+        return input;
+    }
+
 }

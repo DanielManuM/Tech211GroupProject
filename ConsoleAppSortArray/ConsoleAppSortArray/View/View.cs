@@ -2,9 +2,18 @@
 
 public static class View
 {
-    public static void InputTextDisplayArray()
+    public static void DisplayGreeting()
     {
         Console.WriteLine("Welcome to the random array sorter!!");
+    }
+
+    public static void DisplayExitMessage()
+    {
+        Console.WriteLine("Goodbye.");
+    }
+
+    public static void InputTextDisplayArray()
+    {
         Console.WriteLine();
         Console.Write("Please choose the length of the array: ");
     }
