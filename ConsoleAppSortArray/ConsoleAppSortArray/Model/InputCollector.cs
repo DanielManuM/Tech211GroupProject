@@ -2,13 +2,8 @@
 
 using System;
 
-public class InputCollector
+public static class InputCollector
 {
-    public static void InputTextDisplayArray()
-    {
-        Console.WriteLine("Please Choose the length of the array");
-    }
-
     public static int InputArrayLength()
     {
 
@@ -21,13 +16,6 @@ public class InputCollector
         {
             return value;
         }
-    }
-
-    public static void InputTextDisplaySort()
-    {
-        Console.WriteLine("Press 1 for BubbleSort");
-        Console.WriteLine("Press 2 for MergeSort");
-        Console.WriteLine("Press 3 for DotNetSort");
     }
 
     public static int InputSortType()

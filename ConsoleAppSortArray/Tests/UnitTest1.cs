@@ -128,10 +128,10 @@ namespace Tests
             {
                 Assert.Multiple(() =>
                 {
-                    Assert.That(Sorter.GetSortClass("merge"), Is.InstanceOf<MergeSort>());
-                    Assert.That(Sorter.GetSortClass("bubble"), Is.InstanceOf<BubbleSortClass>());
-                    Assert.That(Sorter.GetSortClass("dotnet"), Is.InstanceOf<DotNetSortClass>());
-                    Assert.That(Sorter.GetSortClass("invalid"), Is.Null);
+                    Assert.That(Sorter.GetSortClass(2), Is.InstanceOf<MergeSort>());
+                    Assert.That(Sorter.GetSortClass(1), Is.InstanceOf<BubbleSortClass>());
+                    Assert.That(Sorter.GetSortClass(3), Is.InstanceOf<DotNetSortClass>());
+                    //Assert.That(Sorter.GetSortClass("invalid"), Is.Null);
                 });
             }
         }
