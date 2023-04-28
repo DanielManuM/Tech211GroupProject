@@ -5,9 +5,8 @@
 - Open [ConsoleApp](./ConsoleAppSortArray/ConsoleAppSortArray.sln)
 
 # Use
-- Run program within IDE
+- Run Program.cs within IDE
 - Follow on screen prompts to use program
-
 
 # Components
 
@@ -18,14 +17,13 @@
     - .NET Sort
     - Insertion Sort
   - Random Array Generator
-  - Input Collector (Initial Implementation)
+  - Input Collector
   - Sorter (Factory Class)
   - Timing
 
 - Tests
-  - [x] Sorts
+  - [x] Sorting Methods
   - [x] Random Array Generator
-  - [x] Input Collector
   - [x] Sorter (Factory Class)
   
 # Acknowledgement
@@ -33,4 +31,3 @@
 - [Daniel Manu](https://github.com/DanielManuM)
 - [Nooreen Ali](https://github.com/HumidTurtle)
 - [Vlad Stoyanov](https://github.com/VladStoyanovADP)
-
