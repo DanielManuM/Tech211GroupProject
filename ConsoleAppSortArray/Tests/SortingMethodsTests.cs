@@ -48,7 +48,7 @@ namespace Tests
             [Test]
             public void GivenEmptyArray_MergeSort_ReturnsEmptyArray()
             {
-                Assert.That(mergeSort.Sort(new int[0]), Is.EquivalentTo(new int[] {}));
+                Assert.That(mergeSort.Sort(new int[0]), Is.EquivalentTo(new int[] { }));
             }
 
             [Test]
@@ -73,6 +73,39 @@ namespace Tests
                 List<int> right = new List<int>() { -2, 2, 5, 10 };
 
                 Assert.That(mergeSort.Merge(left, right), Is.EqualTo(expected));
+            }
+        }
+
+        [TestFixture]
+        public class InsertionSortTests
+        {
+            private InsertionSort insertionSort;
+            private int[] _sut = { 299, -8, int.MinValue, 34, -23, int.MaxValue, 2, 3, 13, 23, 50, 99, 12, -34, 2 };
+
+            [SetUp]
+            public void SetUp()
+            {
+                insertionSort = new InsertionSort();
+            }
+
+            [Test]
+            public void GivenEmptyArray_InsertionSort_ReturnsEmptyArray()
+            {
+                Assert.That(insertionSort.Sort(new int[0]), Is.EquivalentTo(new int[] { }));
+            }
+
+            [Test]
+            public void GivenNullAsAnInput_InsertionSort_ThrowsException()
+            {
+                Assert.That(() => insertionSort.Sort(null), Throws.InstanceOf<ArgumentNullException>()
+                    .With.Message.Contain("Input cannot be null. (Parameter 'arr')"));
+            }
+
+            [Test]
+            public void GivenUnsortedArrayOfIntegers_InsertionSort_ReturnsSortedArray()
+            {
+                int[] expected = { int.MinValue, -34, -23, -8, 2, 2, 3, 12, 13, 23, 34, 50, 99, 299, int.MaxValue };
+                Assert.That(insertionSort.Sort(_sut), Is.EquivalentTo(expected));
             }
         }
 
@@ -130,6 +163,7 @@ namespace Tests
                 {
                     Assert.That(Sorter.GetSortClass(2), Is.InstanceOf<MergeSort>());
                     Assert.That(Sorter.GetSortClass(1), Is.InstanceOf<BubbleSortClass>());
+                    Assert.That(Sorter.GetSortClass(3), Is.InstanceOf<InsertionSort>());
                     Assert.That(Sorter.GetSortClass(4), Is.InstanceOf<DotNetSortClass>());
                     Assert.That(Sorter.GetSortClass(5), Is.Null);
                 });

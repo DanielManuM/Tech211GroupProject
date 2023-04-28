@@ -6,7 +6,8 @@ public static class Sorter
     {
         1 => new BubbleSortClass(),
         2 => new MergeSort(),
-        3 => new DotNetSortClass(),
+        3 => new InsertionSort(),
+        4 => new DotNetSortClass(),
         _ => null
     };
 }

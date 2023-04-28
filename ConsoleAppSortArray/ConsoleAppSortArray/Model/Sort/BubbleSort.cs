@@ -21,6 +21,7 @@ public class BubbleSortClass : SortType
                 }
             }
         } while (swapped);
+
         return inputArray;
     }
 }
