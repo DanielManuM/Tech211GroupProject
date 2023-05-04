@@ -27,7 +27,7 @@
   - [x] Sorter (Factory Class)
   
 # Acknowledgement
-- [Abdulmajid Abdussalam Laklouk](https://github.com/3782291211)
+- [3782291211](https://github.com/3782291211)
 - [Daniel Manu](https://github.com/DanielManuM)
 - [Nooreen Ali](https://github.com/HumidTurtle)
 - [Vlad Stoyanov](https://github.com/VladStoyanovADP)
